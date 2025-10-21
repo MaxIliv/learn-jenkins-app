@@ -54,7 +54,7 @@ pipeline {
           npx netlify --version
           echo "deploying to prod, id: $NETLIFY_SITE_ID"
           npx netlify status
-          npx netlify deploy --dir=build --prod --skip-build
+          npx netlify deploy --dir=build --prod --no-build
         '''
       }
     }
