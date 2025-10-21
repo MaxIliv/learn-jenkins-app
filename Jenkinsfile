@@ -1,5 +1,10 @@
 pipeline {
   agent any
+
+  environment {
+    NETLIFY_SITE_ID = '3cd2f6d4-089e-4a13-893c-588a453810f8'
+  }
+
   stages {
     stage('Build') {
       agent {
@@ -46,6 +51,7 @@ pipeline {
         sh '''
           npm install netlify-cli --save-dev
           npx netlify --version
+          echo "deploting to prod, id: $NETLIFY_SITE_ID"
         '''
       }
     }
