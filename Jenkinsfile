@@ -1,17 +1,17 @@
 pipeline {
     agent any
     stages {
-        stage('w/o docker') {
-      steps {
-        sh '''
-            echo "without docker"
-            ls -la
-            touch containet-no.txt
-        '''
-      }
+      stage('w/o docker') {
+        steps {
+          sh '''
+              echo "without docker"
+              ls -la
+              touch containet-no.txt
+          '''
         }
+      }
 
-        stage('w/ docker') {
+    stage('w/ docker') {
       agent {
         docker {
           image 'node:25-alpine'
